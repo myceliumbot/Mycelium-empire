@@ -1,0 +1,54 @@
+@page
+@model aspnetapp.Pages.GameModel
+@{
+    ViewData["Title"] = "Snake Game";
+}
+
+<div class="game-container">
+    <div class="game-header">
+        <h1>🐍 Snake Game</h1>
+        <div class="game-stats">
+            <div class="score">Score: <span id="score">0</span></div>
+            <div class="high-score">High Score: <span id="highScore">0</span></div>
+        </div>
+    </div>
+    
+    <div class="game-board">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+        <div class="game-overlay" id="gameOverlay">
+            <div class="game-message" id="gameMessage">
+                <h2>Press SPACE to Start!</h2>
+                <p>Use arrow keys or WASD to control the snake</p>
+            </div>
+            <button id="startButton" class="game-button">Start Game</button>
+        </div>
+    </div>
+    
+    <div class="game-controls">
+        <div class="control-info">
+            <h3>Controls:</h3>
+            <div class="controls-grid">
+                <div class="control-item">
+                    <kbd>↑</kbd> <kbd>W</kbd> <span>Move Up</span>
+                </div>
+                <div class="control-item">
+                    <kbd>↓</kbd> <kbd>S</kbd> <span>Move Down</span>
+                </div>
+                <div class="control-item">
+                    <kbd>←</kbd> <kbd>A</kbd> <span>Move Left</span>
+                </div>
+                <div class="control-item">
+                    <kbd>→</kbd> <kbd>D</kbd> <span>Move Right</span>
+                </div>
+                <div class="control-item">
+                    <kbd>Space</kbd> <span>Start/Restart</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="~/css/game.css" />
+    <script src="~/js/snake-game.js"></script>
+}
