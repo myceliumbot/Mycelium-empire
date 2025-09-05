@@ -62,6 +62,9 @@ app.MapGet("/Delay/{value}", async (int value) =>
 
 app.Run();
 
+// Make Program class accessible for testing
+public partial class Program { }
+
 [JsonSerializable(typeof(EnvironmentInfo))]
 [JsonSerializable(typeof(Operation))]
 internal partial class AppJsonSerializerContext : JsonSerializerContext
